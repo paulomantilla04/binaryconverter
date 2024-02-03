@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Decimal from './pages/Decimal';
 import Error from "./pages/Error";
 function App() {
-  const path = "*"
+  
   return (
     <>
     <div className="bg-black select-none">
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Binary/>}></Route>
           <Route exact path="/decbin" element={<Decimal/>}></Route>
-          <Route path={path} element={<Error/>}></Route>
+          <Route path="*" element={<Error/>}></Route>
         </Routes>
       </Router>
     </div>
