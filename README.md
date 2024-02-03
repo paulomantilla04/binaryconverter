@@ -1,3 +1,3 @@
-# React + Vite
+# System Converter
 
-This code converts any number into a binary
+This code is a school homework, its purpose is to convert binary to decimal and decimal to binary
