@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { TbHexagonNumber2 } from "react-icons/tb";
 import { TbHexagonNumber0 } from "react-icons/tb";
-
+import { GoSun } from "react-icons/go";
+import { GoMoon } from "react-icons/go";
 import { Link } from 'react-router-dom';
 
 
-const Header = ({icon, onClick}) => {
+const Header = () => {
+    const [theme, setTheme] = useState("light");
+    const [icon, setIcon] = useState(<GoMoon/>)
+
+    useEffect(() => {
+        if (theme === "dark") {
+            document.querySelector('html').classList.add('dark')
+            setIcon(<GoSun/>)
+        } else {
+            document.querySelector('html').classList.remove('dark')
+            setIcon(<GoMoon/>)
+        }
+    }, [theme])
+
+
+    const handleTheme = () => {
+        setTheme(prevTheme => prevTheme === "light" ? "dark" : "light");
+    }
+
   return (
     <header className="h-16 flex flex-col justify-center border-white border-b-white sticky z-10 top-0 bg-[#7FC7D9] select-none dark:bg-[#0c0d1b]">
         <div className="mx-0 max-w-full px-4 md:px-6">
@@ -23,7 +42,7 @@ const Header = ({icon, onClick}) => {
                         <span className='sm:mr-2 text-2xl'><TbHexagonNumber0/></span>
                         <span className="hidden sm:block">DecBin</span>
                     </Link>
-                    <span><button onClick={onClick} className='bg-[#0f1035] text-white rounded-full text-lg w-7 h-7 flex items-center justify-center hover:scale-90 transition-all duration-400 dark:bg-[#DCF2F1] dark:text-[#0c0d1b]'>{icon}</button></span>
+                    <span><button onClick={handleTheme} className='bg-[#0f1035] text-white rounded-full text-lg w-7 h-7 flex items-center justify-center hover:scale-90 transition-all duration-400 dark:bg-[#DCF2F1] dark:text-[#0c0d1b]'>{icon}</button></span>
                 </div>
                 
 
