@@ -5,9 +5,9 @@ import Container from "../components/Container";
 
 
 const Binary = () => {
+
   const name = "<Paulo/>";
-  const text = "{BINARIO}";
-  const textB = "{DECIMAL}";
+  const text = "{DECIMAL}";
   const [value, setValue] = useState(0);
   const [inputValue, setInputValue] = useState(0);
 
@@ -35,7 +35,6 @@ const Binary = () => {
   return (
     <Container
       text={text}
-      textB={textB}
       initValue={value}
       value={inputValue}
       onChange={handleChange}
