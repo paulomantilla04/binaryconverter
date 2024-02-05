@@ -1,8 +1,7 @@
 import React from 'react'
 import { TbHexagonNumber2 } from "react-icons/tb";
 import { TbHexagonNumber0 } from "react-icons/tb";
-import { FaMoon } from "react-icons/fa";
-import { FaSun } from "react-icons/fa";
+
 import { Link } from 'react-router-dom';
 
 
